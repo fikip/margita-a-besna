@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles/App.scss";
+import "./styles/react-transitions.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Intro from "./components/intro/Intro";
+import Scene from "./components/scene/Scene";
+import Menu from "./components/common/Menu";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Menu />
+      <div className="transition-container">
+        <Route path="/" exact component={Intro} />
+        <Route path="/scene" component={Scene} />
+      </div>
+    </Router>
   );
 }
 

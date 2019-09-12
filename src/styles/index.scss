@@ -1,0 +1,38 @@
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  //font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  //  //  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  //  //  sans-serif;
+  font-family: "Bohemian typewriter", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+  color: white;
+}
+
+button {
+  font-family: "Bohemian typewriter", serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+h1 {
+  font-family: "1942 report", serif;
+  font-size: 70px;
+}
+
+@font-face {
+  font-family: '1942 report';
+  src: local('1942 report'), url(../fonts/1942.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Bohemian typewriter';
+  src: local('Bohemian typewriter'), url(../fonts/Bohemian_Typewriter.ttf) format('ttf');
+}
