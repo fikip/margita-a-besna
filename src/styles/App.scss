@@ -26,9 +26,37 @@ $orange: #fcaf43;
   height: 100%;
   .scene-section {
     width: 70%;
+    height: 100%;
   }
   .text-section {
     width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 40px;
+    //text-align: left;
+
+    .chapter-title {
+      font-family: "1942 report", serif;
+      font-size: 70px;
+      margin: 20px 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    .button-next {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      &.showButton {
+        opacity: 1;
+        margin-bottom: 20px;
+      }
+    }
+    .Typist {
+      width: 100%;
+    }
   }
 }
 
@@ -80,10 +108,19 @@ $orange: #fcaf43;
   }
 }
 
+.img-button {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .separator {
   min-height: 100%;
   width: auto;
   &.rtl {
     transform: scaleX(-1);
+  }
+  &.scene {
+    position: absolute;
+    right: 27%;
   }
 }
