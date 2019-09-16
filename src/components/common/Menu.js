@@ -18,7 +18,7 @@ const Menu = props => {
       <NavLink to="/about">About</NavLink>
       <a href="https://fikip.filipdrgon.now.sh">My portfolio</a>
       <ButtonLink
-        to="/about"
+        to="/scene/1"
         text="Start over"
         className={classnames({ intro })}
       />

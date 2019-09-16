@@ -14,7 +14,7 @@ function App() {
       <Menu />
       <div className="transition-container">
         <Route path="/" exact component={Intro} />
-        <Route path="/scene" component={Scene} />
+        <Route path="/scene/:id" component={Scene} />
       </div>
     </Router>
   );

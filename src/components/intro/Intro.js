@@ -12,7 +12,7 @@ const Intro = props => (
     <Separator orientation="ltr" />
     <div className="intro-center-container">
       <h1>Margita a Besna</h1>
-      <ButtonLink to={"scene"} text={"Start the story"} />
+      <ButtonLink to={"scene/1"} text={"Start the story"} />
     </div>
     <Separator orientation="rtl" />
   </section>
