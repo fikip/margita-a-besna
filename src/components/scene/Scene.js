@@ -18,6 +18,7 @@ const Scene = ({ match }) => {
   console.log(id);
   const [showButton, setShowButton] = useState(false);
   const [showText, setShowText] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
   const leftSpring = useSpring({
     from: { left: "0%" },
     to: { left: "-43%" },
@@ -25,7 +26,7 @@ const Scene = ({ match }) => {
       duration: 1000
     },
     delay: 2000,
-    onRest: () => setShowText(true)
+    onRest: () => setShowHeader(true)
   });
   const rightSpring = useSpring({
     from: { left: "0%" },
@@ -34,7 +35,7 @@ const Scene = ({ match }) => {
       duration: 1000
     },
     delay: 2000,
-    onRest: () => setShowText(true)
+    onRest: () => setShowHeader(true)
   });
   return (
     <section
@@ -67,25 +68,50 @@ const Scene = ({ match }) => {
       </section>
       <Separator scene />
       <section className="text-section">
+        <h1 className="chapter-title">
+          {showHeader && (
+            <Typist
+              startDelay={1500}
+              onTypingDone={() => setShowText(true)}
+              cursor={{ hideWhenDone: true, hideWhenDoneDelay: 500 }}
+            >
+              Chapter 1
+            </Typist>
+          )}
+        </h1>
         {showText && (
           <Typist startDelay={1500} onTypingDone={() => setShowButton(true)}>
-            <div className="chapter-title">Chapter 1</div>
-            <Typist.Delay ms={1000} />
             <span className="chapter-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              A barge skims down the stream,
+              <br />
+              company giddy and gleam;
             </span>
             <br />
             <br />
             <Typist.Delay ms={1000} />
             <span className="chapter-text">
-              Pellentesque consectetur metus quis quam suscipit, et facilisis
-              tellus vulputate.
+              Alas!
+              <br />
+              The ghastly gulch approaches,
+              <br />
+              sailors’ merry carols abate;
+              <br />
+              Witness the two mighty masses,
+              <br />
+              Margita, unruffled, a steady bait.
             </span>
             <br />
             <br />
             <Typist.Delay ms={1000} />
             <span className="chapter-text">
-              Mauris et magna vel ex malesuada ullamcorper lacinia nec nulla.
+              Harken! ’Tis her raging stepdame,
+              <br />
+              Besná, fierce and dire.
+              <br />
+              shun her angst, lest we acclaim,
+              <br />
+              an affair with hellfire.
+              <br />
             </span>
           </Typist>
         )}

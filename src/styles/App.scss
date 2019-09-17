@@ -68,7 +68,7 @@ $orange: #fcaf43;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    font-size: 40px;
+    font-size: 30px;
     //text-align: left;
 
     .chapter-title {
@@ -77,14 +77,19 @@ $orange: #fcaf43;
       margin: 20px 0;
       text-align: center;
       width: 100%;
+      //display: block;
+    }
+
+    >.Typist {
+      min-height: 450px;
     }
 
     .button-next {
       opacity: 0;
       transition: opacity 1s ease-in-out;
+      margin-bottom: 20px;
       &.showButton {
         opacity: 1;
-        margin-bottom: 20px;
       }
     }
     .Typist {
