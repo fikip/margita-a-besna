@@ -158,3 +158,47 @@ $orange: #fcaf43;
     z-index: 420;
   }
 }
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 70px);
+  flex-direction: column;
+  font-size: 70px;
+
+  .loader-dots {
+    color: $orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 10px;
+    .loader-dot {
+      top: 0;
+      position: relative;
+      animation: loading 1.5s ease-in-out infinite;
+      &:nth-child(1) {
+        animation-delay: 0s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    }
+    @keyframes loading {
+      0% {
+        margin-bottom: 0;
+      }
+      50% {
+        margin-bottom: 40px;
+      }
+      100% {
+        margin-bottom: 0;
+      }
+    }
+
+  }
+}

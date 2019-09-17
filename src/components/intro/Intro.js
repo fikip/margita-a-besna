@@ -6,7 +6,7 @@ import ButtonLink from "../common/ButtonLink";
 
 const Intro = props => (
   <section
-    className="react-transition swipe-up intro-container"
+    className="react-transition fade-in intro-container"
     style={{ animationDuration: "1s" }}
   >
     <Separator orientation="ltr" />
