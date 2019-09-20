@@ -4,22 +4,26 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import classnames from "classnames";
 import useReactRouter from "use-react-router";
+import { useIntl } from "react-intl";
 
 import ButtonLink from "./ButtonLink";
 
 const Menu = props => {
   const { location } = useReactRouter();
+  const { formatMessage } = useIntl();
   const intro = location.pathname === "/";
   return (
     <nav className={classnames("menu", { intro })}>
       <NavLink to="/" exact className={classnames("title", { intro })}>
-        Margita a Besná
+        {formatMessage({ id: "common.title" })}
       </NavLink>
-      <NavLink to="/about">About</NavLink>
-      <a href="https://fikip.filipdrgon.now.sh">My portfolio</a>
+      <NavLink to="/about">{formatMessage({ id: "menu.about" })}</NavLink>
+      <a href="https://fikip.filipdrgon.now.sh">
+        {formatMessage({ id: "menu.portfolio" })}
+      </a>
       <ButtonLink
         to="/scene/1"
-        text="Start over"
+        text={formatMessage({ id: "menu.restart" })}
         className={classnames({ intro })}
       />
     </nav>

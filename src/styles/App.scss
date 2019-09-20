@@ -17,6 +17,15 @@ $orange: #fcaf43;
       font-size: 70px;
     }
   }
+  .intro-flag {
+    position: absolute;
+    transform: rotate(20deg);
+    z-index: 2;
+    left: 225px;
+    top: 0;
+    height: 200px;
+    cursor: pointer;
+  }
 }
 
 .scene-container {
@@ -57,7 +66,7 @@ $orange: #fcaf43;
       .rail {
         position: absolute;
         top: 0;
-        z-index: 1;
+        z-index: 2;
       }
     }
   }
@@ -69,7 +78,15 @@ $orange: #fcaf43;
     justify-content: space-between;
     align-items: center;
     font-size: 30px;
-    //text-align: left;
+
+    &.sk {
+      font-size: 23px;
+    }
+
+    &.closing {
+      transition: transform 2s;
+      transform: translateY(-1000px);
+    }
 
     .chapter-title {
       font-family: "1942 report", serif;
@@ -77,19 +94,18 @@ $orange: #fcaf43;
       margin: 20px 0;
       text-align: center;
       width: 100%;
-      //display: block;
     }
 
     >.Typist {
-      min-height: 450px;
+      min-height: 600px;
     }
 
     .button-next {
       opacity: 0;
-      transition: opacity 1s ease-in-out;
       margin-bottom: 20px;
       &.showButton {
         opacity: 1;
+        transition: opacity 1s ease-in-out;
       }
     }
     .Typist {
@@ -105,6 +121,9 @@ $orange: #fcaf43;
   height: 50px;
   padding: 10px 40px;
   border-bottom: 1px solid black;
+  z-index: 3;
+  position: relative;
+  background-color: #282c34;
   a {
     text-decoration: none;
     color: white;
@@ -154,13 +173,15 @@ $orange: #fcaf43;
 .separator {
   min-height: 100%;
   width: auto;
+  z-index: 5;
+  padding-left: 100px;
   &.rtl {
     transform: scaleX(-1);
   }
   &.scene {
+    padding: 0;
     position: absolute;
-    right: 27%;
-    z-index: 420;
+    right: 30%;
   }
 }
 

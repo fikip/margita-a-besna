@@ -5,32 +5,39 @@ import Separator from "../common/Separator";
 import Typist from "react-typist";
 import classNames from "classnames";
 import { useSpring, animated } from "react-spring";
+import { useIntl } from "react-intl";
+import useReactRouter from "use-react-router";
 
 import ButtonLightBluePng from "../../img/btn_down_lightblue.png";
 import CurtainLeft from "../../img/curtain_left.png";
 import CurtainRight from "../../img/curtain_right.png";
 import CurtainTop from "../../img/curtain_top.png";
 import Rail from "../../img/rail.png";
-import ButtonLink from "../common/ButtonLink";
+import poemStructure from "../../intl/poemStructure";
+import ImageLink from "../common/ImageLink";
+import { wait } from "../../utils";
 
-const Scene = ({ match }) => {
+const Scene = ({ match, locale, ...props }) => {
+  const { history } = useReactRouter();
+  const { formatMessage } = useIntl();
   const { id } = match.params;
-  console.log(id);
   const [showButton, setShowButton] = useState(false);
   const [showText, setShowText] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
+  const [close, setClose] = useState(false);
   const leftSpring = useSpring({
-    from: { left: "0%" },
-    to: { left: "-43%" },
+    from: { left: close ? "-43%" : "0%" },
+    to: { left: close ? "0%" : "-43%" },
     config: {
       duration: 1000
     },
     delay: 2000,
     onRest: () => setShowHeader(true)
   });
+  console.log(leftSpring);
   const rightSpring = useSpring({
-    from: { left: "0%" },
-    to: { left: "40%" },
+    from: { left: close ? "-40%" : "0%" },
+    to: { left: close ? "0%" : "40%" },
     config: {
       duration: 1000
     },
@@ -67,60 +74,69 @@ const Scene = ({ match }) => {
         </div>
       </section>
       <Separator scene />
-      <section className="text-section">
+      <section
+        className={classNames("text-section", {
+          sk: locale === "sk",
+          closing: close
+        })}
+      >
         <h1 className="chapter-title">
           {showHeader && (
             <Typist
               startDelay={1500}
               onTypingDone={() => setShowText(true)}
               cursor={{ hideWhenDone: true, hideWhenDoneDelay: 500 }}
+              key={id}
             >
-              Chapter 1
+              {formatMessage({ id: "chapter.title" }, { id })}
             </Typist>
           )}
         </h1>
         {showText && (
-          <Typist startDelay={1500} onTypingDone={() => setShowButton(true)}>
-            <span className="chapter-text">
-              A barge skims down the stream,
-              <br />
-              company giddy and gleam;
-            </span>
-            <br />
-            <br />
-            <Typist.Delay ms={1000} />
-            <span className="chapter-text">
-              Alas!
-              <br />
-              The ghastly gulch approaches,
-              <br />
-              sailors’ merry carols abate;
-              <br />
-              Witness the two mighty masses,
-              <br />
-              Margita, unruffled, a steady bait.
-            </span>
-            <br />
-            <br />
-            <Typist.Delay ms={1000} />
-            <span className="chapter-text">
-              Harken! ’Tis her raging stepdame,
-              <br />
-              Besná, fierce and dire.
-              <br />
-              shun her angst, lest we acclaim,
-              <br />
-              an affair with hellfire.
-              <br />
-            </span>
+          <Typist
+            startDelay={1500}
+            onTypingDone={() => setShowButton(true)}
+            key={id}
+          >
+            {poemStructure[locale][id].map((stanza, stanzaIndex) => (
+              // Can't use fragments & undefined here because of Typist :(
+              <span>
+                {stanza.map((line, lineIndex) => (
+                  <span>
+                    {line}
+                    {stanza.length > lineIndex + 1 ? <br /> : <span />}
+                  </span>
+                ))}
+                {poemStructure[locale][id].length > stanzaIndex + 1 ? (
+                  <span>
+                    <br />
+                    <br />
+                    <Typist.Delay ms={1000} />
+                  </span>
+                ) : (
+                  <span />
+                )}
+              </span>
+            ))}
           </Typist>
         )}
-        <ButtonLink
-          src={ButtonLightBluePng}
-          alt="Continue to next chapter"
-          className={classNames("button-next", { showButton })}
-          to={"/scene/2"}
-        />
+        {id < 6 && (
+          <ImageLink
+            src={ButtonLightBluePng}
+            alt="Continue to next chapter"
+            className={classNames("button-next", { showButton })}
+            onClick={async () => {
+              setClose(true);
+              await wait(4000);
+              setShowButton(false);
+              setShowText(false);
+              setShowHeader(false);
+              setClose(false);
+              await wait(4000);
+              history.push(`/scene/${Number(id) + 1}`);
+            }}
+          />
+        )}
       </section>
     </section>
   );

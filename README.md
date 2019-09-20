@@ -16,4 +16,4 @@ or
 ```shell
 npm start
 ```
-Open `http://localhost:3000` and have fun!
+`http://localhost:3000` should open up automatically. Have fun!
