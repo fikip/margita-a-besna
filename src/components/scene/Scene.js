@@ -9,9 +9,13 @@ import { useIntl } from "react-intl";
 import useReactRouter from "use-react-router";
 
 import ButtonLightBluePng from "../../img/btn_down_lightblue.png";
+import ButtonBluePng from "../../img/btn_down_blue.png";
+import ButtonLightGreenPng from "../../img/btn_down_lightgreen.png";
 import CurtainLeft from "../../img/curtain_left.png";
 import CurtainRight from "../../img/curtain_right.png";
 import CurtainTop from "../../img/curtain_top.png";
+import Scene1 from "../../img/Scene1.png";
+import Raft from "../../img/raft.png";
 import Rail from "../../img/rail.png";
 import poemStructure from "../../intl/poemStructure";
 import ImageLink from "../common/ImageLink";
@@ -21,32 +25,44 @@ const Scene = ({ match, locale, ...props }) => {
   const { history } = useReactRouter();
   const { formatMessage } = useIntl();
   const { id } = match.params;
+  const nextSceneButton =
+    id === "1" || id === "2"
+      ? ButtonLightBluePng
+      : id === "3" || id === "4"
+      ? ButtonBluePng
+      : ButtonLightGreenPng;
   const [showButton, setShowButton] = useState(false);
   const [showText, setShowText] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
   const [close, setClose] = useState(false);
   const leftSpring = useSpring({
-    from: { left: close ? "-43%" : "0%" },
-    to: { left: close ? "0%" : "-43%" },
+    from: { left: close ? "-41%" : "0%" },
+    to: { left: close ? "0%" : "-41%" },
     config: {
       duration: 1000
     },
     delay: 2000,
     onRest: () => setShowHeader(true)
   });
-  console.log(leftSpring);
   const rightSpring = useSpring({
-    from: { left: close ? "-40%" : "0%" },
-    to: { left: close ? "0%" : "40%" },
+    from: { left: close ? "41%" : "0%" },
+    to: { left: close ? "0%" : "41%" },
     config: {
       duration: 1000
     },
-    delay: 2000,
-    onRest: () => setShowHeader(true)
+    delay: 2000 // We only need one onRest since these springs both trigger at the same time
+  });
+  const raftSpring = useSpring({
+    from: { right: "0%", bottom: "-10%" },
+    to: { right: "25%", bottom: "10%" },
+    delay: 3000,
+    config: {
+      duration: 1500
+    }
   });
   return (
     <section
-      className="react-transition swipe-up scene-container"
+      className="react-transition fade-in scene-container"
       style={{ animationDuration: "1s" }}
     >
       <section className="scene-section">
@@ -57,7 +73,12 @@ const Scene = ({ match, locale, ...props }) => {
             alt="curtain top"
           />
         </div>
-        <div className="bottom-curtain">
+        <div
+          className="bottom-curtain"
+          style={{
+            backgroundImage: `url(${Scene1})`
+          }}
+        >
           <animated.img
             src={CurtainLeft}
             alt="curtain left wing"
@@ -71,6 +92,12 @@ const Scene = ({ match, locale, ...props }) => {
             style={rightSpring}
           />
           <img src={Rail} className="rail" alt="curtain rail" />
+          <animated.img
+            src={Raft}
+            alt="Raft"
+            className="animated-raft"
+            style={raftSpring}
+          />
         </div>
       </section>
       <Separator scene />
@@ -122,17 +149,17 @@ const Scene = ({ match, locale, ...props }) => {
         )}
         {id < 6 && (
           <ImageLink
-            src={ButtonLightBluePng}
+            src={nextSceneButton}
             alt="Continue to next chapter"
             className={classNames("button-next", { showButton })}
             onClick={async () => {
               setClose(true);
-              await wait(4000);
+              await wait(4000); // Wait for animations to finish safely.
               setShowButton(false);
               setShowText(false);
               setShowHeader(false);
               setClose(false);
-              await wait(4000);
+              await wait(4000); // ^
               history.push(`/scene/${Number(id) + 1}`);
             }}
           />

@@ -13,6 +13,8 @@ import Menu from "./components/common/Menu";
 import Loader from "./components/common/Loader";
 
 import ButtonLightBluePng from "./img/btn_down_lightblue.png";
+import ButtonBluePng from "./img/btn_down_blue.png";
+import ButtonLightGreenPng from "./img/btn_down_lightgreen.png";
 import CurtainLeft from "./img/curtain_left.png";
 import CurtainRight from "./img/curtain_right.png";
 import CurtainTop from "./img/curtain_top.png";
@@ -20,18 +22,25 @@ import Rail from "./img/rail.png";
 import SeparatorPng from "./img/Separator_2.png";
 import FlagEn from "./img/flag_en_256.png";
 import FlagSk from "./img/flag_sk_256.png";
+import Scene1 from "./img/Scene1.png";
+import Raft from "./img/raft.png";
+
 import messages from "./intl/messages";
 
 function App() {
   const images = [
     ButtonLightBluePng,
+    ButtonBluePng,
+    ButtonLightGreenPng,
     CurtainLeft,
     CurtainRight,
     CurtainTop,
     Rail,
     SeparatorPng,
     FlagEn,
-    FlagSk
+    FlagSk,
+    Scene1,
+    Raft
   ];
   const [locale, setLocale] = useState(localStorage.getItem("locale") || "en");
   return (

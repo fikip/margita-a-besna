@@ -2,7 +2,7 @@
 
 export default {
   en: {
-    "common.title": "Margita a Besná",
+    "common.title": "Margita a Besna",
 
     "intro.start": "Start the story",
 
@@ -13,7 +13,7 @@ export default {
     "chapter.title": "Chapter {id}"
   },
   sk: {
-    "common.title": "Margita a Besná",
+    "common.title": "Margita a Besna",
 
     "intro.start": "Začať príbeh",
 
