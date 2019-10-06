@@ -15,11 +15,18 @@ import CurtainLeft from "../../img/curtain_left.png";
 import CurtainRight from "../../img/curtain_right.png";
 import CurtainTop from "../../img/curtain_top.png";
 import Scene1 from "../../img/Scene1.png";
-import Raft from "../../img/raft.png";
+import Scene2 from "../../img/Scene2.png";
+import Scene3 from "../../img/Scene1.png"; // Identical to scene 1
+import Scene4 from "../../img/Scene4.png";
+import Scene5 from "../../img/Scene5.png";
+import Scene6 from "../../img/Scene6.png";
 import Rail from "../../img/rail.png";
 import poemStructure from "../../intl/poemStructure";
 import ImageLink from "../common/ImageLink";
 import { wait } from "../../utils";
+import Animation from "./Animation";
+
+const scenes = [Scene1, Scene2, Scene3, Scene4, Scene5, Scene6];
 
 const Scene = ({ match, locale, ...props }) => {
   const { history } = useReactRouter();
@@ -52,14 +59,6 @@ const Scene = ({ match, locale, ...props }) => {
     },
     delay: 2000 // We only need one onRest since these springs both trigger at the same time
   });
-  const raftSpring = useSpring({
-    from: { right: "0%", bottom: "-10%" },
-    to: { right: "25%", bottom: "10%" },
-    delay: 3000,
-    config: {
-      duration: 1500
-    }
-  });
   return (
     <section
       className="react-transition fade-in scene-container"
@@ -76,7 +75,7 @@ const Scene = ({ match, locale, ...props }) => {
         <div
           className="bottom-curtain"
           style={{
-            backgroundImage: `url(${Scene1})`
+            backgroundImage: `url(${scenes[id - 1]})`
           }}
         >
           <animated.img
@@ -92,12 +91,7 @@ const Scene = ({ match, locale, ...props }) => {
             style={rightSpring}
           />
           <img src={Rail} className="rail" alt="curtain rail" />
-          <animated.img
-            src={Raft}
-            alt="Raft"
-            className="animated-raft"
-            style={raftSpring}
-          />
+          <Animation id={id} />
         </div>
       </section>
       <Separator scene />
@@ -159,7 +153,6 @@ const Scene = ({ match, locale, ...props }) => {
               setShowText(false);
               setShowHeader(false);
               setClose(false);
-              await wait(4000); // ^
               history.push(`/scene/${Number(id) + 1}`);
             }}
           />

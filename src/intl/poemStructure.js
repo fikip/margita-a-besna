@@ -18,7 +18,11 @@ export default {
         "an affair with hellfire."
       ]
     ],
-    2: [["a", "a"]]
+    2: [["a", "a"]],
+    3: [["a", "a"], ["a", "a"]],
+    4: [["a", "a"], ["a", "a"]],
+    5: [["a", "a"], ["a", "a"]],
+    6: [["a", "a"], ["a", "a"]]
   },
   sk: {
     1: [
@@ -40,6 +44,41 @@ export default {
         "prejde Slovák i cez peklo, prejde v Božom mene!"
       ]
     ],
-    2: [["a", "a"]]
+    2: [
+      [
+        "Ponad Váhom biely dom",
+        "Pekná vdova býva v ňom;",
+        "ale krajšia dievčina",
+        "Margita, pastorkyňa."
+      ],
+      [
+        "Vdovička pekná, mladá,",
+        "vydávať by sa rada.",
+        "Oblieka sa v zamaty",
+        "a dievčatko v záplaty;"
+      ],
+      [
+        "Idú, idú vohľači;",
+        "na vdovu nik nepáči,",
+        "len sa každý hneď pýta:",
+        "„A kdeže je Margita?“"
+      ],
+      [
+        "Rozmýšľa, vzdychá, šepce:",
+        "„Pre ňu ma — ach, nik nechce,",
+        "pre ňu sa mi nešťästí:",
+        "preč! — ona musí z cesty!“"
+      ],
+      [
+        "„Margito! — už po lete —",
+        "pôjdeš do Turca k tete.",
+        "Tam obžinky, jasoty:",
+        "čas oddýchnuť z roboty."
+      ]
+    ],
+    3: [["a", "a"], ["a", "a"]],
+    4: [["a", "a"], ["a", "a"]],
+    5: [["a", "a"], ["a", "a"]],
+    6: [["a", "a"], ["a", "a"]]
   }
 };

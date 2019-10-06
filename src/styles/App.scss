@@ -73,8 +73,40 @@ $orange: #fcaf43;
         z-index: 2;
       }
     }
-    .animated-raft {
+    .animation {
       position: absolute;
+    }
+    .hut {
+      width: 82%;
+      top: 12%;
+      left: 7%;
+      z-index: 2;
+    }
+    .animated-raft-6 {
+      transform: rotate(25deg);
+      width: 12%;
+      height: auto;
+    }
+
+    .animated-widow-4 {
+      z-index: 1;
+      transform: scaleX(-1);
+      width: 15%;
+    }
+    .animated-widow {
+      transform: scaleX(-1);
+      width: 15%;
+    }
+    .animated-margita {
+      transform: scaleX(-1);
+      width: 15%;
+    }
+    .animated-man {
+      bottom: 7%;
+      width: 23%;
+      left: 0;
+    }
+    .animated-raft {
       transform: rotate(15deg);
       width: 20%;
       height: auto;

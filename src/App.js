@@ -23,7 +23,14 @@ import SeparatorPng from "./img/Separator_2.png";
 import FlagEn from "./img/flag_en_256.png";
 import FlagSk from "./img/flag_sk_256.png";
 import Scene1 from "./img/Scene1.png";
+import Scene2 from "./img/Scene2.png";
+import Scene4 from "./img/Scene4.png";
+import Scene5 from "./img/Scene5.png";
+import Scene6 from "./img/Scene6.png";
+import Man from "./img/Man.png";
 import Raft from "./img/raft.png";
+import Margita from "./img/Margita.png";
+import Widow from "./img/Widow.png";
 
 import messages from "./intl/messages";
 
@@ -40,6 +47,13 @@ function App() {
     FlagEn,
     FlagSk,
     Scene1,
+    Scene2,
+    Scene4,
+    Scene5,
+    Scene6,
+    Man,
+    Margita,
+    Widow,
     Raft
   ];
   const [locale, setLocale] = useState(localStorage.getItem("locale") || "en");
