@@ -12,11 +12,7 @@ const Thanks = props => {
       <p>
         <>
           {formatMessage({ id: "thanks.p2" })}(
-          <a
-            href={
-              "https://zlatyfond.sme.sk/dielo/82/Botto_Margita-a-Besna/1#ftn.id2523094"
-            }
-          >
+          <a href="https://zlatyfond.sme.sk/dielo/82/Botto_Margita-a-Besna/1#ftn.id2523094">
             link
           </a>
           ).

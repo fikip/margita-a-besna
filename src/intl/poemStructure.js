@@ -18,11 +18,88 @@ export default {
         "an affair with hellfire."
       ]
     ],
-    2: [["a", "a"]],
-    3: [["a", "a"], ["a", "a"]],
-    4: [["a", "a"], ["a", "a"]],
-    5: [["a", "a"], ["a", "a"]],
-    6: [["a", "a"], ["a", "a"]]
+    2: [
+      [
+        "Above the river, a pale shack;",
+        "A lovely widow resides smack.",
+        "But a damsel more charming dwells there too,",
+        "Margita, her eyes a pale light blue."
+      ],
+      [
+        "Blooming men do come and go,",
+        "None spares sight on widow's woe.",
+        "They ever only inquire:",
+        "'Tis Margita I admire!"
+      ],
+      [
+        "The widow sighs, full of woe,",
+        "'Tis Margita's vice I am alo',",
+        "Off, she need go!"
+      ],
+      [
+        "„Margita! To the village,",
+        "You depart,",
+        "Find a man in your image,",
+        "A fine work of art.“"
+      ]
+    ],
+    3: [
+      ["Margita strolls the thicket,", "The widow hounds her, wicked."],
+      [
+        "On an outlook, she stops to bask,",
+        "To see the river, a query to ask.",
+        "„River, river, prophet mine,",
+        "Will I find a man quite fine?“"
+      ],
+      [
+        "Asudden, the widow emerge,",
+        "shoves Margita off ridge!",
+        "„Here! Your marriage with the Grim,",
+        "pass my greetings on to him.“"
+      ]
+    ],
+    4: [
+      [
+        "„'Tis only I who knows,",
+        "Margita's fate 'mong sloes.",
+        "But what that bellow might be,",
+        "a raven's broken croak?“"
+      ],
+      [
+        "As the night approaches,",
+        '"rat-tat" a rap on the postern echoes,',
+        "„Who might that be? Guilt in heart of mine?“",
+        "Swiftly, a distort mask of horrid swine,",
+        "onto the window, shocks the widow,",
+        "chills her spine."
+      ]
+    ],
+    5: [
+      [
+        "Aghast, she vanishes in the thicket,",
+        "Pursuing her own steps, foul & wicked."
+      ],
+      [
+        "On the second outlook, she freezes in fear,",
+        "rears herself, the mask still there!",
+        "One step off, and down she goes,",
+        "Into stinging stream's winding lows."
+      ]
+    ],
+    6: [
+      [
+        "So it goes; Since her flight,",
+        "On a full moon's dead of night,",
+        "One can hear her rowdy wail,",
+        "So will it be, 'til this vale tucks its tail."
+      ],
+      [
+        "So will it be, 'til God leaves widow lone,",
+        "So will it be, 'til the widow has enough prey",
+        "Only then will it be known,",
+        "That evil has been kept at bay."
+      ]
+    ]
   },
   sk: {
     1: [
@@ -73,7 +150,7 @@ export default {
         "„Margito! — už po lete —",
         "pôjdeš do Turca k tete.",
         "Tam obžinky, jasoty:",
-        "čas oddýchnuť z roboty."
+        "čas oddýchnuť z roboty.“"
       ]
     ],
     3: [
