@@ -267,6 +267,25 @@ $orange: #fcaf43;
         margin-bottom: 0;
       }
     }
+  }
+}
 
+.thanks-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100% - 70px);
+  .thanks-title {
+    font-family: "Bohemian typewriter", serif;
+  }
+  p {
+    width: 60%;
+    font-size: 30px;
+    text-align: center;
+    a {
+      color: white;
+
+    }
   }
 }

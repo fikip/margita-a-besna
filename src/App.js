@@ -33,6 +33,7 @@ import Margita from "./img/Margita.png";
 import Widow from "./img/Widow.png";
 
 import messages from "./intl/messages";
+import Thanks from "./components/thanks/Thanks";
 
 function App() {
   const images = [
@@ -87,6 +88,7 @@ function App() {
               path="/scene/:id"
               render={props => <Scene {...props} locale={locale} />}
             />
+            <Route path="/thanks" component={Thanks} />
           </Preload>
         </div>
       </Router>

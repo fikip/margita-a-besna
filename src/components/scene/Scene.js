@@ -141,12 +141,12 @@ const Scene = ({ match, locale, ...props }) => {
             ))}
           </Typist>
         )}
-        {id < 6 && (
-          <ImageLink
-            src={nextSceneButton}
-            alt="Continue to next chapter"
-            className={classNames("button-next", { showButton })}
-            onClick={async () => {
+        <ImageLink
+          src={nextSceneButton}
+          alt="Continue to next chapter"
+          className={classNames("button-next", { showButton })}
+          onClick={async () => {
+            if (id < 6) {
               setClose(true);
               await wait(4000); // Wait for animations to finish safely.
               setShowButton(false);
@@ -154,9 +154,11 @@ const Scene = ({ match, locale, ...props }) => {
               setShowHeader(false);
               setClose(false);
               history.push(`/scene/${Number(id) + 1}`);
-            }}
-          />
-        )}
+            } else {
+              history.push(`/thanks`);
+            }
+          }}
+        />
       </section>
     </section>
   );

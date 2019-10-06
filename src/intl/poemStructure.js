@@ -76,9 +76,91 @@ export default {
         "čas oddýchnuť z roboty."
       ]
     ],
-    3: [["a", "a"], ["a", "a"]],
-    4: [["a", "a"], ["a", "a"]],
-    5: [["a", "a"], ["a", "a"]],
-    6: [["a", "a"], ["a", "a"]]
+    3: [
+      [
+        "Ide dievča dolinou",
+        "a macocha sihlinou;",
+        "dievča letí ako vták",
+        "a macocha ako drak."
+      ],
+      [
+        "Prišlo ono pod bralo,",
+        "kvietky vodou hádzalo:",
+        "„Hejže, Váhu, veštec náš!",
+        "kam ja pôjdem na sobáš?!“ —"
+      ],
+      [
+        "Vtom vzteklica pripáli:",
+        "plesk! dievčinu zo skaly —",
+        "„Na! tu tebe sobáš tvoj!“",
+        "Voda, hora zhučí: hoj! —"
+      ]
+    ],
+    4: [
+      [
+        "„Chachacha! kto o tom vie?",
+        "Ticho, ticho, svedomie!",
+        "Už cestička preťatá,",
+        "už Margita vydatá.“"
+      ],
+      [
+        "Suseda! čo to značí",
+        "ten čudný rapot strák?",
+        "„Prídu, prídu vohľači.“",
+        "Vohľači? — „Veru tak!"
+      ],
+      [
+        "Ticho. Už sa večerí.",
+        "Čuj len: klop, klop, do dverí,",
+        "klop klop, klop klop! — ha, kto je?",
+        "„To klope srdce tvoje.“",
+        "V okne — páč! — tvár strašlivá,",
+        "pozri! — jak sa dnu díva —"
+      ],
+      [
+        "Buch, buch! — dvere s’ rozpadnú",
+        "utopenci vkročia dnu:",
+        "„Hej, domová, domová!",
+        "čis’ už s venom hotová?!“"
+      ]
+    ],
+    5: [
+      [
+        "Zvýskne — vlasy sa zježia:",
+        "vyletí na pobrežia,",
+        "z pobrežia poď! hor’ stráňou",
+        "a svati všetci za ňou.",
+        "Ona predkom ako blesk,",
+        "hoj, a za ňou tresk a plesk."
+      ],
+      [
+        "Na vrch brala doletí,",
+        "svadba za ňou vzápätí:",
+        "„Hraj, muzika, hraj!",
+        "Hraj, muzika, do skoku —",
+        "a s macochou do toku",
+        "haj, haja, haj!“"
+      ]
+    ],
+    6: [
+      [
+        "Tak sa stalo. — Od tých čias, vraj, o polnočnej chvíli",
+        "počuť, ako na tých skalách čosi clivo kvíli.",
+        "Na vrch Besnej chachot, chichot, svadobníci vreštia;",
+        "ale vtedy beda pltiam, to blízko neštestia."
+      ],
+      [
+        "A tak to, vraj, bude bývať, kým sa v prach nezmelí",
+        "to veliké, hrozné bralo, ten hriech skamenelý.",
+        "Neraz hrom doň ešte udrie, neraz Váh doň búši,",
+        "kým popraje Boh pokoja totej biednej duši."
+      ],
+      [
+        "Nejedna plť na tom mieste ešte sa rozletí,",
+        "kým sa miera nedoplní nevinných obetí.",
+        "A len potom celým Váhom — tak to povedajú —",
+        "poletí plť spievajúci dolu ku Dunaju."
+      ]
+    ]
   }
 };
