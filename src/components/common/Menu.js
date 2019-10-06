@@ -18,7 +18,11 @@ const Menu = props => {
         {formatMessage({ id: "common.title" })}
       </NavLink>
       <NavLink to="/about">{formatMessage({ id: "menu.about" })}</NavLink>
-      <a href="https://fikip.filipdrgon.now.sh">
+      <a
+        href="https://fikip.filipdrgon.now.sh"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {formatMessage({ id: "menu.portfolio" })}
       </a>
       <ButtonLink

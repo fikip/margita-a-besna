@@ -270,13 +270,13 @@ $orange: #fcaf43;
   }
 }
 
-.thanks-container {
+.about-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: calc(100% - 70px);
-  .thanks-title {
+  .about-title {
     font-family: "Bohemian typewriter", serif;
   }
   p {

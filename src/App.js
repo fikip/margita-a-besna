@@ -33,7 +33,7 @@ import Margita from "./img/Margita.png";
 import Widow from "./img/Widow.png";
 
 import messages from "./intl/messages";
-import Thanks from "./components/thanks/Thanks";
+import About from "./components/about/About";
 
 function App() {
   const images = [
@@ -61,7 +61,7 @@ function App() {
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
       <Router>
-        <Menu setLocale={setLocale} />
+        <Menu />
         <div className="transition-container">
           <Preload
             loadingIndicator={<Loader />}
@@ -88,7 +88,7 @@ function App() {
               path="/scene/:id"
               render={props => <Scene {...props} locale={locale} />}
             />
-            <Route path="/thanks" component={Thanks} />
+            <Route path="/about" component={About} />
           </Preload>
         </div>
       </Router>

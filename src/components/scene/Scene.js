@@ -155,7 +155,7 @@ const Scene = ({ match, locale, ...props }) => {
               setClose(false);
               history.push(`/scene/${Number(id) + 1}`);
             } else {
-              history.push(`/thanks`);
+              history.push(`/about`);
             }
           }}
         />
