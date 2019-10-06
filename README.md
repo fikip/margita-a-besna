@@ -10,10 +10,10 @@ Currently deployed [here](https://margita-a-besna.filipdrgon.now.sh).
 ## Development
 To start the dev server, run:
 ```shell
-yarn start
+yarn && yarn start
 ```
 or
 ```shell
-npm start
+npm i && npm start
 ```
 `http://localhost:3000` should open up automatically. Have fun!
